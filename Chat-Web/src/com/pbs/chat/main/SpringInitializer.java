@@ -5,7 +5,8 @@ import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatche
 public class SpringInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
 
 	public SpringInitializer() {
-		System.setProperty("spring.profiles.active", "development");
+		if (System.getProperty("spring.profiles.active") == null)
+			System.setProperty("spring.profiles.active", "production");
 	}
 	
 	@Override
@@ -15,7 +16,7 @@ public class SpringInitializer extends AbstractAnnotationConfigDispatcherServlet
 
 	@Override
 	protected Class<?>[] getServletConfigClasses() {
-		return new Class[] {};
+		return null;
 	}
 
 	@Override
