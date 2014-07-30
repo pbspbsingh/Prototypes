@@ -4,6 +4,10 @@ import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatche
 
 public class SpringInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
 
+	public SpringInitializer() {
+		System.setProperty("spring.profiles.active", "development");
+	}
+	
 	@Override
 	protected Class<?>[] getRootConfigClasses() {
 		return new Class[] { WebAppConfig.class };
