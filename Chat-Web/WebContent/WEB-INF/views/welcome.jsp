@@ -6,6 +6,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+	<form action="signin/facebook" method="post">
+		<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
+		<input type="hidden" name="scope" value="email,public_profile,offline_access">
+		<input type="submit" value="facebook">
+	</form>
 </body>
 </html>
